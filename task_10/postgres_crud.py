@@ -1,5 +1,4 @@
-import asyncio
-import asyncpg
+import psycopg2
 
 # Database config — update with your actual details
 DB_CONFIG = {
@@ -10,55 +9,48 @@ DB_CONFIG = {
     'port': 5432,
 }
 
-async def create_table(conn):
-    await conn.execute('''
-        CREATE TABLE IF NOT EXISTS users (
+
+# Connect to PostgreSQL
+try:
+    conn = psycopg2.connect(**DB_CONFIG)
+    cursor = conn.cursor()
+    print("Connected to PostgreSQL")
+
+    # --- CREATE TABLE ---
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS employees (
             id SERIAL PRIMARY KEY,
-            name TEXT NOT NULL,
-            email TEXT UNIQUE NOT NULL
-        )
-    ''')
-    print("Table created (if not exists)")
+            name VARCHAR(100),
+            age INTEGER,
+            department VARCHAR(50)
+        );
+    """)
+    conn.commit()
 
-async def insert_user(conn, name, email):
-    try:
-        await conn.execute('''
-            INSERT INTO users (name, email) VALUES ($1, $2)
-        ''', name, email)
-        print(f"Inserted user: {name}")
-    except asyncpg.UniqueViolationError:
-        print(f"Email {email} already exists.")
+    # --- INSERT DATA ---
+    cursor.execute("INSERT INTO employees (name, age, department) VALUES (%s, %s, %s);",
+                   ('Alice', 30, 'HR'))
+    conn.commit()
 
-async def fetch_users(conn):
-    rows = await conn.fetch('SELECT * FROM users')
-    print("Users:")
+    # --- READ DATA ---
+    cursor.execute("SELECT * FROM employees;")
+    rows = cursor.fetchall()
+    print("\nEmployees Table:")
     for row in rows:
-        print(dict(row))
+        print(row)
 
-async def update_user_email(conn, user_id, new_email):
-    result = await conn.execute('''
-        UPDATE users SET email = $1 WHERE id = $2
-    ''', new_email, user_id)
-    print(f"Update result: {result}")
+    # --- UPDATE DATA ---
+    cursor.execute("UPDATE employees SET age = %s WHERE name = %s;", (31, 'Alice'))
+    conn.commit()
 
-async def delete_user(conn, user_id):
-    result = await conn.execute('DELETE FROM users WHERE id = $1', user_id)
-    print(f"Delete result: {result}")
+    # --- DELETE DATA ---
+    # cursor.execute("DELETE FROM employees WHERE name = %s;", ('Alice',))
+    # conn.commit()
 
-async def main():
-    conn = await asyncpg.connect(**DB_CONFIG)
-    try:
-        await create_table(conn)
-        await insert_user(conn, "Alice", "alice@example.com")
-        await insert_user(conn, "Bob", "bob@example.com")
-        await fetch_users(conn)
-        await update_user_email(conn, 1, "alice.new@example.com")
-        await delete_user(conn, 2)
-        await fetch_users(conn)
-    finally:
-        await conn.close()
-        print("🔌 Connection closed")
-
-if __name__ == "__main__":
-    asyncio.run(main())
-
+except Exception as e:
+    print("Error:", e)
+finally:
+    if conn:
+        cursor.close()
+        conn.close()
+        print("PostgreSQL connection closed.")
