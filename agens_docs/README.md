@@ -1,13 +1,15 @@
-# SKAI Worldwide Documentation
+# Agens Documentation
 
-This repository contains the standardized documentation for SKAI Worldwide's products and services, built using Sphinx and reStructuredText (RST).
+This repository contains the documentation for Agens products and services, built using Sphinx and reStructuredText (RST).
 
 ## Features
 
-- Modern, responsive documentation theme matching SKAI Worldwide's branding
-- Support for both RST and Markdown files
+- Modern, responsive documentation theme using Read the Docs theme
+- Support for both RST and Markdown files (via MyST parser)
 - Cross-referencing between documents
 - Code syntax highlighting
+- Copy button for code blocks
+- Tabbed content support
 - Search functionality
 - Mobile-friendly design
 
@@ -18,9 +20,10 @@ docs/
 ├── _static/          # Static files (CSS, images)
 ├── _templates/       # Custom templates
 ├── products/         # Product documentation
-├── services/         # Service documentation
-├── resources/        # Additional resources
-└── index.rst         # Main documentation index
+├── index.rst         # Main documentation index
+├── conf.py          # Sphinx configuration
+├── Makefile         # Build commands for Unix-like systems
+└── make.bat         # Build commands for Windows
 ```
 
 ## Getting Started
@@ -35,7 +38,7 @@ docs/
 1. Clone the repository:
    ```bash
    git clone [repository-url]
-   cd skai-docs
+   cd agens_docs
    ```
 
 2. Create and activate a virtual environment:
@@ -57,9 +60,14 @@ docs/
    ```
 
 2. Build the HTML documentation:
-   ```bash
-   make html
-   ```
+   - On Windows:
+     ```bash
+     make.bat html
+     ```
+   - On Unix-like systems:
+     ```bash
+     make html
+     ```
 
 3. View the documentation:
    Open `_build/html/index.html` in your web browser.
@@ -89,18 +97,12 @@ Features
 * Feature 2
 ```
 
-### Adding a New Service
-
-1. Create a new RST file in the `docs/services/` directory
-2. Add the file to the appropriate toctree in `index.rst`
-3. Follow the existing documentation structure
-
 ## Customizing the Theme
 
 The documentation theme can be customized by modifying:
 
 - `docs/_static/custom.css` - Custom CSS styles
-- `docs/config.py` - Sphinx configuration
+- `docs/conf.py` - Sphinx configuration
 - `docs/_templates/` - Custom HTML templates
 
 ## Contributing
@@ -112,4 +114,4 @@ The documentation theme can be customized by modifying:
 
 ## License
 
-Copyright © 2024 SKAI Worldwide Co., Ltd. All Rights Reserved.
+Copyright © 2024 Agens Co., Ltd. All Rights Reserved.
