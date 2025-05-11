@@ -1,29 +1,91 @@
+/* SKAI Worldwide Documentation Theme */
 
+:root {
+    --skai-primary: #003366;
+    --skai-secondary: #0099cc;
+    --skai-text: #333333;
+    --skai-background: #ffffff;
+    --skai-light-gray: #f8f9fa;
+}
+
+/* General Styles */
 body {
-    font-family: "Segoe UI", sans-serif;
-    color: #2A2A2A;
-    background-color: #ffffff;
+    font-family: 'Noto Sans KR', 'Open Sans', Arial, sans-serif;
+    color: var(--skai-text);
+    background-color: var(--skai-background);
 }
 
-.wy-nav-side {
-    background-color: #005BAC;
+/* Header and Navigation */
+.wy-side-nav-search {
+    background-color: var(--skai-primary);
 }
 
-.wy-side-nav-search, .wy-menu-vertical header, .wy-menu-vertical li.toctree-l1 > a {
-    background-color: #004080;
+.wy-side-nav-search input[type="text"] {
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
-h1, h2, h3 {
-    color: #005BAC;
+.wy-nav-top {
+    background-color: var(--skai-primary);
 }
 
+/* Links */
 a {
-    color: #005BAC;
+    color: var(--skai-secondary);
 }
 
-.rst-content .section {
-    border: 1px solid #eee;
-    border-radius: 6px;
-    padding: 15px;
-    margin-bottom: 20px;
+a:hover {
+    color: var(--skai-primary);
+}
+
+/* Sidebar */
+.wy-nav-side {
+    background: var(--skai-light-gray);
+}
+
+.wy-menu-vertical li.current {
+    background: var(--skai-primary);
+}
+
+.wy-menu-vertical li.current > a {
+    color: white;
+}
+
+/* Content */
+.wy-nav-content {
+    max-width: 1200px;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--skai-primary);
+    font-weight: 600;
+}
+
+/* Code blocks */
+pre {
+    background-color: var(--skai-light-gray);
+    border: 1px solid #e1e4e5;
+}
+
+/* Tables */
+table.docutils {
+    border: 1px solid #e1e4e5;
+}
+
+table.docutils th {
+    background-color: var(--skai-primary);
+    color: white;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #e1e4e5;
+    color: #666;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .wy-nav-content-wrap {
+        background-color: var(--skai-background);
+    }
 }

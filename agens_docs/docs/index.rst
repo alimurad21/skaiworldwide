@@ -3,12 +3,35 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to AgensDocs's documentation!
+Welcome to SKAI Worldwide Documentation
 =====================================
+
+SKAI Worldwide's Cutting-Edge Innovation Technologies
+---------------------------------------------------
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Products
+
+   products/graph_rag
+   products/agensgraph
+   products/3d_gen_ai
+   products/ai_agent
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Services
+
+   services/pgts
+   services/education
+   services/tech_portal
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Resources
+
+   resources/manual
+   resources/white_paper
 
 Indices and tables
 ==================

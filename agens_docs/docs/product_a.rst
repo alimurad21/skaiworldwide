@@ -1,15 +1,16 @@
+  Product 1
+  =========
 
-Product A Documentation
-=======================
+  Overview
+  --------
 
-Overview
---------
+  This is a dummy overview for Product 1.
 
-This section covers the basics of Product A.
+  Features
+  ~~~~~~~~
 
-Features
---------
+  - Feature A
+  - Feature B
 
-- Feature 1
-- Feature 2
-- Feature 3
+  .. include:: product2.md
+     :parser: myst_parser.sphinx_
