@@ -23,8 +23,10 @@ release = '1.0.0'
 # Add any Sphinx extension module names here
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
     'sphinx.ext.githubpages',
     'myst_parser',  # For Markdown support
 ]
@@ -43,7 +45,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'logo_only': True,
     'display_version': True,
-    'prev_next_buttons_position': 'bottom',
+    'prev_next_buttons_position': 'both',
     'style_external_links': True,
     'style_nav_header_background': '#003366',
     'collapse_navigation': False,
@@ -71,3 +73,13 @@ source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
+
+# -- Syntax highlighting ---------------------------------------------------
+
+highlight_language = 'python'
+pygments_style = 'sphinx'
+
+# Add SQL syntax highlighting
+from sphinx.highlighting import lexers
+from pygments.lexers.sql import SqlLexer
+lexers['sql'] = SqlLexer()

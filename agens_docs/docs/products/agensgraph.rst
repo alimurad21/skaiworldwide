@@ -19,10 +19,10 @@ Features
 * Enterprise-grade security
 
 Getting Started
---------------
+---------------
 
 Installation
-~~~~~~~~~~~
+~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -35,7 +35,7 @@ Installation
    make install
 
 Basic Usage
-~~~~~~~~~~
+~~~~~~~~~~~
 
 .. code-block:: sql
 
@@ -51,7 +51,7 @@ Basic Usage
    CREATE (n)-[:KNOWS]->(m);
 
 Architecture
------------
+------------
 
 AgensGraph consists of the following key components:
 
@@ -64,7 +64,7 @@ AgensGraph consists of the following key components:
 For detailed architecture information, see the :doc:`architecture guide </products/agensgraph_architecture>`.
 
 API Reference
-------------
+-------------
 
 For detailed API documentation, see the :doc:`API reference </products/agensgraph_api>`.
 

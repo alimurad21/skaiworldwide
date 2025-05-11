@@ -1,5 +1,5 @@
 3D-Based Gen AI Video Production
-===============================
+================================
 
 A 3D-based generative AI content production service.
 
@@ -19,10 +19,10 @@ Features
 * Cloud-based processing
 
 Getting Started
---------------
+---------------
 
 Installation
-~~~~~~~~~~~
+~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -30,7 +30,7 @@ Installation
    pip install skai-3d-genai
 
 Basic Usage
-~~~~~~~~~~
+~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -50,7 +50,7 @@ Basic Usage
    )
 
 Architecture
------------
+------------
 
 The system is built on the following components:
 
@@ -63,7 +63,7 @@ The system is built on the following components:
 For detailed architecture information, see the :doc:`architecture guide </products/3d_gen_ai_architecture>`.
 
 API Reference
-------------
+-------------
 
 For detailed API documentation, see the :doc:`API reference </products/3d_gen_ai_api>`.
 

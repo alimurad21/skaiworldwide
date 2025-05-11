@@ -18,17 +18,17 @@ Features
 * Integration with major LLM providers
 
 Getting Started
---------------
+---------------
 
 Installation
-~~~~~~~~~~~
+~~~~~~~~~~~~
 
 .. code-block:: bash
 
    pip install skai-graph-rag
 
 Basic Usage
-~~~~~~~~~~
+~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -44,7 +44,7 @@ Basic Usage
    response = rag.query("What are the key features of Graph RAG?")
 
 Architecture
------------
+------------
 
 The system consists of the following components:
 
@@ -56,7 +56,7 @@ The system consists of the following components:
 For more detailed information, see the :doc:`architecture guide </products/graph_rag_architecture>`.
 
 API Reference
-------------
+-------------
 
 For detailed API documentation, see the :doc:`API reference </products/graph_rag_api>`.
 

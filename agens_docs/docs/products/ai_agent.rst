@@ -19,10 +19,10 @@ Features
 * Personalized marketing automation
 
 Getting Started
---------------
+---------------
 
 Installation
-~~~~~~~~~~~
+~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -30,7 +30,7 @@ Installation
    pip install skai-ai-agent
 
 Basic Usage
-~~~~~~~~~~
+~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -53,7 +53,7 @@ Basic Usage
    analytics = agent.get_analytics(campaign.id)
 
 Architecture
------------
+------------
 
 The platform consists of the following components:
 
@@ -66,7 +66,7 @@ The platform consists of the following components:
 For detailed architecture information, see the :doc:`architecture guide </products/ai_agent_architecture>`.
 
 API Reference
-------------
+-------------
 
 For detailed API documentation, see the :doc:`API reference </products/ai_agent_api>`.
 
