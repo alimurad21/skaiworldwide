@@ -1,0 +1,29 @@
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    color: #2A2A2A;
+    background-color: #ffffff;
+}
+
+.wy-nav-side {
+    background-color: #005BAC;
+}
+
+.wy-side-nav-search, .wy-menu-vertical header, .wy-menu-vertical li.toctree-l1 > a {
+    background-color: #004080;
+}
+
+h1, h2, h3 {
+    color: #005BAC;
+}
+
+a {
+    color: #005BAC;
+}
+
+.rst-content .section {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
